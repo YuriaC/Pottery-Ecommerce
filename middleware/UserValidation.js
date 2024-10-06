@@ -2,28 +2,6 @@
 import validator from 'validator';
 import {USERNAME_MIN_LEN, USERNAME_MAX_LEN, EMAIL_MIN_LEN, PWD_MIN_LEN} from "../model/User.js";
 
-
-// helper function for validating email pattern
-// const emailValidator = function(email) {
-//     const re = new RegExp('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'); // regular expression for email addresses 
-//     return re.test(email)
-// };
-
-// // helper function for strong password validation
-// const passWordValidator = function(password) {
-//     const minLength = 8;
-//     const hasUpperCase = /[A-Z]/.test(password);   // Checks for uppercase letter
-//     const hasLowerCase = /[a-z]/.test(password);   // Checks for lowercase letter
-//     const hasDigit = /[0-9]/.test(password);       // Checks for digit
-//     const hasSpecialChar = /[!_@#$%^&*(),.?":{}|<>]/.test(password);  // Checks for special character
-    
-//     return password.length >= minLength &&
-//         hasUpperCase &&
-//         hasLowerCase &&
-//         hasDigit &&
-//         hasSpecialChar;
-// };
-
 // helper function for password validation msg display
 function passWordValidationMsg(password, minLength = PWD_MIN_LEN) {
     const hasUpperCase = /[A-Z]/.test(password);   // Checks for uppercase letter

@@ -1,0 +1,37 @@
+[
+    {
+        "name" : "JingDeZhen",
+        "description": "Jingdezhen may have produced pottery as early as the sixth century CE, though it is named after the reign name of Emperor Zhenzong, in whose reign it became a major kiln site, around 1004. By the 14th century it had become the largest centre of production of Chinese porcelain, which it has remained, increasing its dominance in subsequent centuries.",
+        "country":"China",
+        "established": 1500 
+    },
+
+    {
+        "name" : "CorningWare",
+        "description": "For more than 170 years, Corning has combined its unparalleled expertise in glass science, ceramics science, and optical physics with deep manufacturing and engineering capabilities to develop life-changing innovations and products.",
+        "country":"USA",
+        "established": 1851 
+    },
+
+    {
+        "name" : "Le Creuset",
+        "description": "Le Creuset is a pioneer in color development and the leader in highly-durable, chip-resistant enameled cast iron. Although others now offer their own interpretations of our signature craft, our visionary enamel expertise spans nearly a century and gives our brand the edge in quality and innovation.",
+        "country":"France",
+        "established": 1925 
+    },
+
+    {
+        "name" : "Wedgwood",
+        "description": "Our story began in 1759 when our founder, Josiah Wedgwood I, aged just 29, started as an independent potter in Burslem, England. Fast forward over 260 years later and Wedgwood is still producing many of the materials Josiah invented, such as Jasper, Queen's Ware and Black Basalt.",
+        "country":"England",
+        "established": 1759 
+    },
+
+    {
+        "name" : "Arabia",
+        "description": "Arabia has specialized in faience and porcelain kitchenware and tableware. The original Arabia porcelain factory was located in Toukola. It later housed the Aalto University School of Arts, Design and Architecture. Arabia's timeless design and exceptional quality has made them one of Finland's most famous brands, ",
+        "country":"Finland",
+        "established": 1873 
+    }
+]
+

@@ -1,36 +1,83 @@
 import { Schema, model } from 'mongoose';
+import validator from 'validator';
+import {    
+    NAME_MIN_LEN,
+    NAME_MAX_LEN,
+    DESC_MIN_LEN,
+    DESC_MAX_LEN,
+    MIN_STOCK,
+    MAX_STOCK,
+    DEFAULT_IMG_PATH
+} from './global_variables.js';
+
+const MIN_PRICE = 0; 
+const MAX_PRICE = Number.MAX_SAFE_INTEGER;
 
 const productSchema = new Schema({
     name: {
         type: String,
         trim: true,
         required: [true, "A product has to have a name!"],
-        minLength: [2, "The product name is too short."],
-        maxLength: [100, "The product name is too long (max 100 characters)."],
+        minLength: [NAME_MIN_LEN, `Product name should be at least ${NAME_MIN_LEN} characters long.`],
+        maxLength: [NAME_MAX_LEN, `Product name exceeds the limit of ${NAME_MAX_LEN} characters.`],
+        validate: [validator.isAlphanumeric, "No special character allowed in the username."],
+    },
+
+    productType: {
+        type: String, 
+        trim: true,
+        required: true,
+        validate: [validator.isAlphanumeric, "No special character allowed in the product type."]
     },
 
     brand: {
-        ref,  // needs to reference brand document
-    }, 
+        type: mongoose.Schema.Types.ObjectId,  // ObjectId reference to the Brand schema
+        ref: 'Brand',  // 'Brand' is the name of the Brand model
+        required: true,
+    },
 
     description: {
         type: String,
         trim: true,
-        minLength: [5, "Product description too short. Has to be at least 5-character long."],
-        maxLength: [300, "Product description too long. {VALUE} / 300."],
+        minLength: [DESC_MIN_LEN, `Product description should be at least ${DESC_MIN_LEN} characters long.`],
+        maxLength: [DESC_MAX_LEN, `Product description exceeds the limit of ${DESC_MAX_LEN} characters.`],
+    },
+
+    price: {
+        type: Number,
+        required: true,
+        get: getPrice,
+        set: setPrice,
+        min: [MIN_PRICE, `Product price can't be lower than ${MIN_PRICE}! `],
+        max: [MAX_PRICE, "Price exceeds upper limit!"]
     },
 
     stock: {
         type: Number,
         required: true,
-        min: [0, "product stock can't be lower than 0! "],
-        max: [9999, "{VALUE} exceeds storage limit =["]
+        min: [MIN_STOCK, `Product stock can't be lower than ${MIN_STOCK}! `],
+        max: [MAX_STOCK, "{VALUE} exceeds storage limit."]
     },
 
-    available: {
-        type: Boolean,
-        required: true,
-        // need to be validated by checking stock property
+    // available: {
+    //     type: Boolean,
+    //     required: true,
+    //     default: true,
+    //     // need to be validated by checking stock property
+    // },
+
+    img: {
+        type: String,
+        default: DEFAULT_IMG_PATH,
+        validate: { 
+            validator: value => validator.isURL(value, { protocols: ['http','https','ftp'], require_tld: true, require_protocol: true }),
+            message: 'Must be a Valid URL' 
+        }
+    },
+
+    imgDescription: {
+        type: String,
+        default: "default product image",
     },
 
     createdAt: {
@@ -43,12 +90,28 @@ const productSchema = new Schema({
         type: Date,
         default:() => Date.now(),
     },
-
-    img: {
-        type: String,
-        description: String,
-    }
 });
 
-const Product = model('Product', productSchema);  // user model
-export default Product;
+// Getter
+productSchema.path('price').get(function(num) {
+    return (num / 100).toFixed(2);
+});
+
+// Setter
+productSchema.path('price').set(function(num) {
+    return num * 100;
+});
+
+const Product = model('Product', productSchema); 
+export {Product, MIN_PRICE, MAX_PRICE};
+
+
+// to populate the brand reference
+// Product.find()
+//     .populate('brand')  // this will populate the brand field with brand details
+//     .then(products => {
+//         console.log(products);
+//     })
+//     .catch(err => {
+//         console.error(err);
+//     });

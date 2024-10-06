@@ -1,0 +1,242 @@
+[
+    {
+        "name":"Zisha Teapot",
+        "brand":"JingDeZhen",
+        "description":"Also as Yixing clay teapot. A masterfully handcrafted teapot in classic style. Volume: 7.8 Oz.",
+        "type":"teaware",
+        "stock":10,
+        "price":399.99
+    },
+    {
+        "name":"Esteri vase 19 cm",
+        "brand":"Arabia",
+        "description":"Arabia’s Esteri vase features a beautiful floral motif, designed by Esteri Tomula in honor of the factory’s centenary in 1973. Named after its designer, the Esteri pattern adorned tableware originally both in blue and brown. The fresh blue-and-white pattern adds a lovely touch of Finnish design of the 1970s to the everyday as well as celebrations.",
+        "stock":14,
+        "type":"decor",
+        "price":59.6
+    },
+    {
+        "name":"18 Piece Dinnerware Set",
+        "brand":"CorningWare",
+        "description":"18-Piece Service for 6 Dinnerware Set, Triple Layer Glass and Chip Resistant, Lightweight Round Plates and Bowls Set, Indigo Speckle",
+        "type":"kitchenware",
+        "stock":25,
+        "price":83.99
+    },
+    {
+        "name":"Signature Round Dutch Oven",
+        "brand":"Le Creuset",
+        "description":"In Mauve Pink color. 5.5 qt. 5-6 Servings. Enameled cast iron delivers superior heat distribution and retention. Ready to use, requires no seasoning. Easy-to-clean and durable enamel resists dulling, staining, chipping and cracking.",
+        "type":"kitchenware",
+        "stock":100,
+        "price":420
+    },
+    {
+        "name":"24h Tuokio Pitcher",
+        "brand":"Arabia",
+        "description":"0,5 L, red. The 24h Tuokio tableware range is based on the popular 24h series from Heikki Orvola and the Tuokio decoration is by Helorinne & Kallio. Originally designed by designer Heikki Orvola for his own use.",
+        "stock":70,
+        "type":"kitchenware",
+        "price":52.2
+    },
+    {
+        "name":"Heritage 3 Piece Baking Essentials Set",
+        "brand":"Le Creuset",
+        "description":" \n Heritage Rectangular Dish: Exterior- 15\" long, 9 5/8 in wide, 3 1/2\" tall. Interior- 12 1/2\" long, 9\" wide, 2 3/8\" deep. \n Heritage Square Dish: Exterior- 12 1/8 in long, 10\" wide, 3 1/2\" tall. Interior- 9 3/8\" long, 9 3/8\" wide, 2 1/2\" deep. \n Heritage Loaf Pan: Exterior- 10 3/4\" long, 5\" wide, 3 1/2\" tall. Interior- 8 3/4\" long, 4 1/4\" wide, 2 5/8\" deep.",
+        "stock":55,
+        "type":"kitchenware",
+        "price":150
+    },
+    {
+        "name":"Paratiisi jar with lid, 0,43 L",
+        "brand":"Arabia",
+        "description":"The Paratiisi jar with lid by Arabia is adorned with Birger Kaipiainen's yellow-blue theme that gives a timeless, summery spirit for the abundant floral pattern. Arabia’s Paratiisi, Finnish for paradise, was designed by Birger Kaipiainen, the award-winning Finnish ceramic artist. Created in 1969, Paratiisi is still one of Finland’s most beloved tableware classics.",
+        "stock":2,
+        "type":"kitchenware",
+        "price":116
+    },
+    {
+        "name":"Magnolia Blossom Rose Bowl",
+        "brand":"Wedgwood",
+        "description":"Combining the familiar soft blue Jasper color palette with an organic shape and the elegant white Magnolia flower in ornamental relief, the Magnolia Blossom 6' Rose Bowl looks exquisite on display in any home. It is beautifully presented in a signature Wedgwood blue gift box, making an ideal gift for any occasion.",
+        "type":"decor",
+        "stock":10,
+        "price":220
+    },
+    {
+        "name":"Blue and White Rice Bowl",
+        "brand":"JingDeZhen",
+        "description":"4.5 inch blue and white color rice bowl.",
+        "type":"kitchenware",
+        "stock":100,
+        "price":9.99
+    },
+    {
+        "name":"Signature Pumpkin Cocotte",
+        "brand":"Le Creuset",
+        "description":"In white color, 3-4 servings, 3.9qt. Enameled cast iron delivers superior heat distribution and retention. Ready to use, requires no seasoning. Easy-to-clean and durable enamel resists dulling, staining, chipping and cracking.",
+        "type":"kitchenware",
+        "stock":40,
+        "price":368
+    },
+    {
+        "name":"CorningWare Glass-Ceramic Pyroceram Round Classic Casserole",
+        "brand":"CorningWare",
+        "description":"2.4 Quart / 2.25 Liter Cooking Pot with Handles & Glass Cover - White (Medium)",
+        "type":"kitchenware",
+        "stock":60,
+        "price":39.99
+    },
+    {
+        "name":"Misty Leaves 12 Piece Dinnerware Set",
+        "brand":"CorningWare",
+        "description":"12-Piece Dinnerware Set, Service for 4 with misty Leaves pattern. Ultra-hygienic, non-porous and easy-to-clean plates and bowls; Dishwasher, microwave and preheated-oven safe.",
+        "stock":6,
+        "type":"kitchenware",
+        "price":38.99
+    },
+    {
+        "name":"Qing-Style Saucer",
+        "brand":"JingDeZhen",
+        "description":"A porcelain saucer imitating Qing dynasty style.",
+        "type":"kitchenware",
+        "stock":25,
+        "price":22.99
+    },
+    {
+        "name":"Vera Wang Jardin Mug",
+        "brand":"Wedgwood",
+        "description":"The Vera Jardin Mug features a beautiful design inspired by Vera's love for art and personal collection of botanical illustrations. A glossy white backdrop decorated with warm gold and bronze floral accents brings shimmering luxe to your favorite tea or coffee. Also available as part of the 4-Piece Setting.",
+        "type":"teaware",
+        "stock":25,
+        "price":31.5
+    },
+    {
+        "name":"Paratiisi plate 26 cm",
+        "brand":"Arabia",
+        "description":"The Paratiisi plate by Arabia is adorned with Birger Kaipiainen's yellow-blue theme that gives a timeless, summery spirit for the abundant floral pattern. Arabia’s Paratiisi, Finnish for paradise, was designed by Birger Kaipiainen, the award-winning Finnish ceramic artist. Created in 1969, Paratiisi is still one of Finland’s most beloved tableware classics.",
+        "stock":100,
+        "type":"kitchenware",
+        "price":48
+    },
+    {
+        "name":"8 Piece Appetizer Plates Set",
+        "brand":"CorningWare",
+        "description":"8-Piece Appetizer Plates Set, Triple Layer Glass and Chip Resistant, Lightweight Round 6-3/4-inch Plates, Winter Frost White",
+        "type":"kitchenware",
+        "stock":120,
+        "price":29.58
+    },
+    {
+        "name":"Florentine Turquoise 3 Piece Tea Set",
+        "brand":"Wedgwood",
+        "description":"There are few patterns that live up to the richness of Florentine Turquoise; first introduced in 1931 on a fine bone china body and characterized by an ornate border intricately detailed with a cacophony of mystical creatures and fantastical flora. The collection features a wealth of delicately hand-rendered motifs set against the clarity of white, fine bone china.",
+        "stock":21,
+        "type":"teaware",
+        "price":30.99
+    },
+    {
+        "name":"WonderLust Waterlily Gift Tray",
+        "brand":"Wedgwood",
+        "description":"Decorated in our Waterlily pattern that forms part of the Wonderlust collection, it’s inspired by the flora and fauna of the Amazon, with the waterlilies taken from the Wedgwood archive.",
+        "stock":18,
+        "type":"decor",
+        "price":80
+    },
+    {
+        "name":"Straight Wall Ramekin 1pc",
+        "brand":"Le Creuset",
+        "description":"Ramekins are also versatile for prepping and storing ingredients, and feature a ridge along the base that allows them to stack vertically without sticking together or tipping over. Crafted from premium stoneware, they're finished with a vibrant glaze which is easy to clean, dishwasher-safe, and resistant to chips, scratches and stains.",
+        "stock":300,
+        "type":"kitchenware",
+        "price":18
+    },
+    {
+        "name":"Long-necked Chinese Porcelain Vase",
+        "brand":"JingDeZhen",
+        "description":"Classic Jingdezhen Blue and White Porcelain Flower Vase, Ceramic Floral Pattern, Diamond Theme, Traditional Cylinder Shaped, Elegant Home Decor Ornament",
+        "stock":6,
+        "type":"decor",
+        "price":38.99
+    },
+    {
+        "name":"Sunnuntai mug 0,35 L",
+        "brand":"Arabia",
+        "description":"The Sunnuntai mug by Arabia, with its bright yellow pattern, is guaranteed to put a smile on your face. The lovely, colorful mug will make your morning cuppa taste even better. Designed in 1971 by Birger Kaipiainen, who is also behind the popular Paratiisi dinnerware, the Sunnuntai collection is decorated with an abstract retro pattern resembling a yellow flower.",
+        "stock":27,
+        "type":"teaware",
+        "price":26
+    },
+    {
+        "name":"Demi Kettle and Mugs Set",
+        "brand":"Le Creuset",
+        "description":"In sea salt color. 3-Piece set. Serve your favorite beverage in the perfectly color coordinated mugs – the generous 14-ounce capacity keeps contents warm or cold and is finished with a vibrant glaze which is easy to clean, dishwasher-safe, and resistant to chips, scratches and stains. ",
+        "type":"kitchenware",
+        "stock":24,
+        "price":99.99
+    },
+    {
+        "name":"Uunikokki pie dish 28 cm, linden",
+        "brand":"Arabia",
+        "description":"The Uunikokki pie dish by Arabia helps you to bake and serve both sweet and savory pies. This linden green special color is only available as a limited edition. Designed by Tapio Yli-Viikari in the late 1970s, the Uunikokki series is an icon of Finnish ceramic design. Made of durable vitro porcelain suitable for high temperatures",
+        "stock":40,
+        "type":"kitchenware",
+        "price":39.7
+    },
+    {
+        "name":"Vintage Chinese Dragon Patterned Decorative Plate",
+        "brand":"JingDeZhen",
+        "description":"Vintage Ceramic Decorative Plate - Jingdezhen Porcelain Hanging Ornament with Kowloon Map Design for Home Living Room Decor",
+        "type":"decor",
+        "stock":30,
+        "price":19.87
+    },
+    {
+        "name":"White Ceramic Pen holder",
+        "brand":"JingDeZhen",
+        "description":"1pc Traditional Chinese Jingdezhen Ceramic Pen Holder - Snowy Landscape Design, Elegant Home Decor Accent Piece for Office Desk and Study Area",
+        "stock":50,
+        "type":"decor",
+        "price":5.99
+    },
+    {
+        "name":"Florentine Turquoise Lidded Vase 6 Inch",
+        "brand":"Wedgwood",
+        "description":"Celebrate 150 years of Florentine with an exceptional piece from the collection. The fluid design of a delightful dolphin graces this lidded jar, representing harmony and wellbeing. Hand-rendered with a black enamel colour lining and unique backstamp, only a small number will ever be available.",
+        "type":"decor",
+        "stock":3,
+        "price":700
+    },
+    {
+        "name":"Wild Strawberry Inky Blue Teacup Saucer",
+        "brand":"Wedgwood",
+        "description":"The Wild Strawberry Inky Blue Teacup and Saucer is a modern twist on a classic design. Crafted from fine bone china, this set features the quintessential English design of hand-drawn vines and strawberries in a new, modern deep inky blue. The bold colour contrasts beautifully against the silky white body, adding a contemporary edge to a time-honoured design.",
+        "type":"teaware",
+        "stock":30,
+        "price":75
+    },
+    {
+        "name":"4 Piece Place Setting French White",
+        "brand":"CorningWare",
+        "description":"4-Piece Place Set, service for 1. Porcelain, Stoneware, Dishwasher Safe, Microwave Safe",
+        "stock":21,
+        "type":"kitchenware",
+        "price":30.99
+    },
+    {
+        "name":"Corningware French White Round Baking Dish",
+        "brand":"CorningWare",
+        "description":"rench White 1.5 qt Round Casserole. No Lid. Durable stoneware material designed for use in oven, microwave, refrigerator, and freezer. Resists chipping and cracking.",
+        "type":"kitchenware",
+        "stock":50,
+        "price":26.49
+    },
+    {
+        "name":"Vancouver Mugs, Set of 4",
+        "brand":"Le Creuset",
+        "description":"In chambary color. Le Creuset's best-selling Vancouver Mug is a casually colorful staple for modern dining in any home, for any occasion. With a generous 14 fluid-ounce capacity, it's ideal for keeping coffee, tea, hot chocolate, and even single servings of soup or dessert, warm or cold.",
+        "stock":400,
+        "type":"kitchenware",
+        "price":75.99
+    }
+]
