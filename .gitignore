@@ -1,2 +1,4 @@
 # ignore all .env
 *.env
+
+util/generateJWT.js
