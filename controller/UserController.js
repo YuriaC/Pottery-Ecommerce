@@ -1,7 +1,21 @@
 import {User} from '../model/User.js';
 import * as argon2 from 'argon2';
 import getSalt from '../util/generateSalt.js';
-// import generateToken from '../utils/generateToken.js';
+import generateToken from '../util/generateToken.js';
+
+
+// helper function for generating JWT token and couple jwt with a httpOnly cookie, returns cookie
+const jwtCookie = (res, id, username) => {
+    const token = generateToken(id, username);
+    console.log(`JWT token, ${token}, generated. \n`);  // debug
+    res.cookie('token', token, {
+        httpOnly: true,
+        maxAge: 3600000,
+        sameSite: 'strict',
+    });
+
+    return token
+}
 
 
 // TO-DO generate JWT TOKEN function
@@ -33,15 +47,13 @@ const register = async (req, res) => {
             salt: salt,
             password : hashedPwd,
         });
-
-        console.log(`User document for ${user.userName} created. \n`);  // debug
+        // console.log(`User document for ${user.userName} created. \n`);  // debug
         
-        // TO-DO generate JWT TOKEN
-        // // generate JWT token
-        // const token = jwtCookie(res, user._id, email);
+        // generate JWT token
+        const token = jwtCookie(res, user._id, userName);
         // console.log(`JWT token, ${token}, generated. \n`);  // debug
 
-        return res.status(201).json({message:`Welcome, ${userName}! You are registered to YJ's Ecommerce Site!`});
+        return res.status(201).json({data: token, message:`Welcome, ${userName}! You are registered to YJ's Ecommerce Site!`});
         } catch (e) {
         return res.status(500).json({message: `ERROR: ${e}.`});
     }
@@ -51,7 +63,6 @@ const register = async (req, res) => {
 // user login
 const login = async (req, res) => {
     // user can login with either userName or email
-    
     const {credential, password} = req.body;
     try {
         let user = await User.findOne({email: credential}).select(['userName','password','salt']).lean().exec() 
@@ -71,11 +82,11 @@ const login = async (req, res) => {
             return res.status(401).json({message:"Wrong password!"});
         }
 
-        // else: correct password
-
-        // TO-DO generate JWT TOKEN
-
-        return res.status(200).json({message:`Login Successful. Welcome, ${user.userName}!`});
+        //generate JWT TOKEN
+        const token = jwtCookie(res, user._id, user.userName);
+        // console.log(`JWT token, ${token}, generated. \n`);  // debug
+        
+        return res.status(200).json({data: token, message:`Login Successful. Welcome, ${user.userName}!`});
     } catch (e) {
         return res.status(500).json({message: `ERROR: ${e}.`});  
     }
@@ -85,8 +96,9 @@ const login = async (req, res) => {
 // user log out
 const logout = (_req, res) => {
     try {
-        // res.clearCookie('token'); // clear cookie in browser;
+        res.clearCookie('token'); // clear cookie in browser;
         // invalidate the token
+
         return res.status(200).json({ message: 'Logged out successfully' });
     } catch (error) {
         console.error(error);
