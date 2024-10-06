@@ -6,25 +6,23 @@ import {
     register,
     login,
     logout,
-    // verifyToken,
+    verifyToken,
 } from '../controller/UserController.js';
 
 // import user validator middlewares
-// user validator middlewares
 import {
     userRegistrationValidation,
     userLoginValidation,
 } from '../middleware/UserValidation.js';
 
-
 // import jwt validator middleware 
-
+import jwtValidation from '../middleware/AuthValidation.js';
 
 // set router
 router
     .post('/register', userRegistrationValidation, register)
     .post('/login', userLoginValidation, login)
     .get('/logout', logout)
-    // .get('/verifyToken')
+    .get('/verifyToken', jwtValidation, verifyToken)
 
 export default router;
