@@ -1,4 +1,5 @@
 import { Schema, model } from 'mongoose';
+import validator from 'validator';
 import {    
     NAME_MIN_LEN,
     NAME_MAX_LEN,
@@ -15,9 +16,10 @@ const brandSchema = new Schema({
         type: String,
         trim: true,
         required: [true, "A brand has to have a name!"],
+        unique: true,
         minLength: [NAME_MIN_LEN, `Brand name should be at least ${NAME_MIN_LEN} characters long.`],
         maxLength: [NAME_MAX_LEN, `Brand name exceeds the limit of ${NAME_MAX_LEN} characters.`],
-        validate: [validator.isAlphanumeric, "No special character allowed in the username."],
+        validate: [validator.isAlphanumeric, "No special character allowed in the brand name."],
     },
 
     description: {
@@ -45,10 +47,10 @@ const brandSchema = new Schema({
     img: {  // logo
         type: String,
         default: DEFAULT_IMG_PATH,
-        validate: { 
-            validator: value => validator.isURL(value, { protocols: ['http','https','ftp'], require_tld: true, require_protocol: true }),
-            message: 'Must be a Valid URL' 
-        }
+        // validate: { 
+        //     validator: value => validator.isURL(value, { protocols: ['http','https','ftp'], require_tld: true, require_protocol: true }),
+        //     message: 'Must be a Valid URL' 
+        // }
     },
 
     imgDescription: {

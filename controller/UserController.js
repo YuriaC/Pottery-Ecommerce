@@ -17,11 +17,6 @@ const jwtCookie = (res, id, username) => {
     return token
 }
 
-
-// TO-DO generate JWT TOKEN function
-
-// TO-DO token verification token
-
 // user register
 const register = async (req, res) => {
     const {userName, email, password, rePassword} = req.body;
@@ -106,5 +101,14 @@ const logout = (_req, res) => {
     }
 };
 
+const verifyToken = (req, res) => {
+    const { username } = req.body;
+    try {
+        return res.status(200).json({ username });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: error.message });
+    }
+};
 
-export { register, login, logout };
+export {register, login, logout, verifyToken};

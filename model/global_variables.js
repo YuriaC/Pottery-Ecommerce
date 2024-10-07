@@ -1,5 +1,5 @@
 const NAME_MIN_LEN = 2;
-const NAME_MAX_LEN = 20;
+const NAME_MAX_LEN = 100;
 const DESC_MIN_LEN = 20;
 const DESC_MAX_LEN = 500;
 const MIN_STOCK = 0;

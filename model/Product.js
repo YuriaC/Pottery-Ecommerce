@@ -13,6 +13,11 @@ import {
 const MIN_PRICE = 0; 
 const MAX_PRICE = Number.MAX_SAFE_INTEGER;
 
+function nameValidator(name) {  
+    const re = /^[a-zA-Z0-9\-.,_' ]+$/;
+    return re.test(name)
+}
+
 const productSchema = new Schema({
     name: {
         type: String,
@@ -20,18 +25,23 @@ const productSchema = new Schema({
         required: [true, "A product has to have a name!"],
         minLength: [NAME_MIN_LEN, `Product name should be at least ${NAME_MIN_LEN} characters long.`],
         maxLength: [NAME_MAX_LEN, `Product name exceeds the limit of ${NAME_MAX_LEN} characters.`],
-        validate: [validator.isAlphanumeric, "No special character allowed in the username."],
+        validate: {
+            validator: nameValidator,
+            message: "No special character allowed in the username."
+        },
     },
 
     productType: {
         type: String, 
         trim: true,
         required: true,
+        minLength: [NAME_MIN_LEN, `Product type name should be at least ${NAME_MIN_LEN} characters long.`],
+        maxLength: [NAME_MAX_LEN, `Product type name exceeds the limit of ${NAME_MAX_LEN} characters.`],
         validate: [validator.isAlphanumeric, "No special character allowed in the product type."]
     },
 
     brand: {
-        type: mongoose.Schema.Types.ObjectId,  // ObjectId reference to the Brand schema
+        type: Schema.Types.ObjectId,  // ObjectId reference to the Brand schema
         ref: 'Brand',  // 'Brand' is the name of the Brand model
         required: true,
     },
@@ -46,8 +56,6 @@ const productSchema = new Schema({
     price: {
         type: Number,
         required: true,
-        get: getPrice,
-        set: setPrice,
         min: [MIN_PRICE, `Product price can't be lower than ${MIN_PRICE}! `],
         max: [MAX_PRICE, "Price exceeds upper limit!"]
     },
@@ -69,10 +77,10 @@ const productSchema = new Schema({
     img: {
         type: String,
         default: DEFAULT_IMG_PATH,
-        validate: { 
-            validator: value => validator.isURL(value, { protocols: ['http','https','ftp'], require_tld: true, require_protocol: true }),
-            message: 'Must be a Valid URL' 
-        }
+        // validate: { 
+        //     validator: value => validator.isURL(value, { protocols: ['http','https','ftp'], require_tld: true, require_protocol: true }),
+        //     message: 'Must be a Valid URL' 
+        // }
     },
 
     imgDescription: {
@@ -102,8 +110,9 @@ productSchema.path('price').set(function(num) {
     return num * 100;
 });
 
+
 const Product = model('Product', productSchema); 
-export {Product, MIN_PRICE, MAX_PRICE};
+export {Product, nameValidator, MIN_PRICE, MAX_PRICE};
 
 
 // to populate the brand reference

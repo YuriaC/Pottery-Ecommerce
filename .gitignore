@@ -4,6 +4,8 @@
 # ignore node_modules directory
 node_modules/
 
-# ignore the jwt generator file
+# ignore these files adn directorys under the util directory
 util/generateJWT.js
+util/seedDB.js
+util/data/*
 
