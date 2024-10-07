@@ -34,7 +34,7 @@ function displayProducts(products) {
         const productElement = document.createElement('div');
         productElement.className = 'product';
         productElement.innerHTML = `
-            <a href="#">
+            <a href="${BASE_URL}/product/:${product._id}">
                 <img 
                     src = ${product.img}
                     alt = ${product.imgDescription}

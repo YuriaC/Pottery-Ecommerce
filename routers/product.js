@@ -16,7 +16,8 @@ import paginatedResults from '../middleware/paginatedView.js';
 import {
     addProduct,
     addProducts,
-    viewProducts
+    viewProducts,
+    viewProduct
 } from '../controller/ProductController.js'
 
 // set router
@@ -24,6 +25,7 @@ router
     .post('/add', productRegistrationValidation, addProduct)
     .post('/addMany', multiRegistrationValidation, addProducts)
     .get('/', paginatedResults(Product), viewProducts)
+    .get('/:id', viewProducts)
     // .get('/all', async (req, res) => {
     //     try {
     //         const page = req.query.page ? parseInt(req.query.page) - 1 : 0;
@@ -82,6 +84,5 @@ router
     //     }
     // })
 
-    
 
 export default router;

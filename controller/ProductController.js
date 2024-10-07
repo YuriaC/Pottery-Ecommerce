@@ -70,4 +70,18 @@ const viewProducts = async (_req, res) => {
     }
 };
 
-export { addProduct, addProducts, viewProducts };
+const viewProduct = async (req, res) => {
+    try {
+        const productId = req.params.id;
+        const product = await Product.findById(productId);
+
+        if (!product) {
+            return res.status(404).json({message: `Product does not exist: ERROR: ${e}.`});
+        }
+        res.status(200).json(product);
+    } catch(e) {
+        return res.status(500).json({message: `ERROR: ${e}.`});
+    }
+};
+
+export { addProduct, addProducts, viewProducts, viewProduct };
