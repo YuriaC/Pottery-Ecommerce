@@ -64,8 +64,7 @@ const addProducts = async (req, res) => {
 // view all products
 const viewProducts = async (_req, res) => {
     try {
-    const products = await Product.find();
-    res.status(200).json(res.paginatedResults);
+        res.status(200).json(res.paginatedResults);
     } catch(e) {
         return res.status(500).json({message: `ERROR: ${e}.`});
     }

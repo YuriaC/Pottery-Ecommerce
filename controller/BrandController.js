@@ -49,30 +49,63 @@ const addBrands = async (req, res) => {
     }
 };
 
-const getOne = async (req, res) => {
-        // // Step 1. get userID from body
-        // const { userId, username } = req.body;
-        // console.log(userId, username);
-        try {
-            const brand = await Brand.find().select('-_id -__v').lean().exec();
-            if (!brand) {return res.status(404).json({ message: 'Brand does not exist.' });}
-            return res.status(200).json({ data : brand, message: 'Found 1 brand' });
-        } catch (err) {
-            return res.status(500).json({message: 'Internal server error',});
-        }
-};
+// const getOne = async (req, res) => {
+//         // // Step 1. get userID from body
+//         // const { userId, username } = req.body;
+//         // console.log(userId, username);
+//         try {
+//             const brand = await Brand.find().select('-_id -__v').lean().exec();
+//             if (!brand) {return res.status(404).json({ message: 'Brand does not exist.' });}
+//             return res.status(200).json({ data : brand, message: 'Found 1 brand' });
+//         } catch (err) {
+//             return res.status(500).json({message: 'Internal server error',});
+//         }
+// };
 
-const getAll = async (req, res) => {
-    // Step 1. get userID from body
-    const { userId, username } = req.body;
-    console.log(userId, username);
+// const getAll = async (req, res) => {
+//     // Step 1. get userID from body
+//     const { userId, username } = req.body;
+//     console.log(userId, username);
 
+//     try {
+//         const todos = await Todo.find().select('-_id -__v').lean().exec();
+//         return res.status(200).json({ todos });
+//     } catch (err) {
+//         return res.status(500).json({message: 'Internal server error',});
+//     }
+// };
+
+
+
+// async function getBrandNames(_req, res) {
+//     try {
+//         // Fetch only the 'name' field from the documents
+//         const brandNames = await Product.find({}, 'name').exec();
+        
+//         // Transform the result to return only an array of names
+//         const names = brandNames.map(product => product.name);
+
+//         res.status(200).json(names);
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).json({ message: error.message });
+//     }
+// };
+
+// get all brand name
+async function getBrandNames() {
     try {
-        const todos = await Todo.find().select('-_id -__v').lean().exec();
-        return res.status(200).json({ todos });
-    } catch (err) {
-        return res.status(500).json({message: 'Internal server error',});
-    }
-};
+        // Fetch only the 'name' field from the documents
+        const brandNames = await Brand.find({}, 'name').exec();
+        
+        // Transform the result to return only an array of names
+        const names = brandNames.map(brand => brand.name);
 
-export { addBrand, addBrands, getOne, getAll };
+        return names;
+    } catch (error) {
+        console.error(error);
+        throw new Error(`Error fetching brand names: ${error.message}`);
+    }
+}
+
+export { addBrand, addBrands, getBrandNames };

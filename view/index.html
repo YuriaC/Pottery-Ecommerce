@@ -18,25 +18,32 @@
         <div class="navbar-left">
             <a class="userEle" href="/view/index.html">HomePage</a>
         </div>
-        <div class="navbar-right">
-            <a class="userEle" href="./login.html">Login</a>
-            <a class="userEle" href="./signup.html">Register</a>
-            <a class="userEle" href="/login">Logout</a>
+        <div class="navbar-right" id="btn-container">
+            <p id="greeting">Welcome</p>
+            <a class="userEle" id="login-btn" href="./login.html">Login</a>
+            <a class="userEle" id="signup-btn"  href="./signup.html">Register</a>
+            <a class="userEle" id="logout-btn"  href="/login">Logout</a>
         </div>
     </nav>
 
     <div class="hero">
         <div class="filter">
-            <p>I am filter</p>
+            <!-- Search Bar and filters -->
         </div>
 
         <article class="playfair-display">
             <h1> Welcome to YJ's Pottery!</h1>
-            <h2>Finest ceramics and porcelain for your everyday needs!</h2>
+            <h2>The Finest ceramics and porcelain Selections for your everyday needs</h2>
+
+            <div id="product-display">
+                <p>loading products...</p>
+
+            </div>
+
         </article>
 
         <div class="fav">
-            <p>fav here</p>
+            <!-- users can only favorite items after log in -->
         </div>
 
     </div>

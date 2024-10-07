@@ -5,7 +5,6 @@ const router = express.Router();
 import {
     addBrand,
     addBrands,
-    getAll,
 } from '../controller/BrandController.js';
 
 // import brand validator middlewares

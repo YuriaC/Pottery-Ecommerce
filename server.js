@@ -3,8 +3,8 @@ import morgan from 'morgan';  // for logger middleware
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+// import { fileURLToPath } from 'url';
+// import { dirname } from 'path';
 
 dotenv.config();
 const app = express();

@@ -54,7 +54,6 @@ const register = async (req, res) => {
     }
 };
 
-
 // user login
 const login = async (req, res) => {
     // user can login with either userName or email

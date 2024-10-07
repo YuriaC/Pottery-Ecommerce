@@ -1,44 +1,44 @@
 const BASE_URL = `http://localhost:5500`;
 
 // Check if user is logged in
-
-// const checkToken = async (e) => {
-//     const token = window.localStorage.getItem('token');
-//     try {
-//         const response = await fetch(`${BASE_URL}/user/verifyToken`, {
-//             headers: {
-//                 Authorization: `Bearer ${token}`,
-//             },
-//             credentials: 'include',
-//         })
-//         if (!response.ok) {
-//             const errorData = await response.json(); // Get error details from response
-//             window.localStorage.removeItem(token);  // danger?
-//             throw new Error(errorData.message); // Throw an error with the backend message
-//         }
-
-//         const result = await response.json();
-//         window.location.href = '/';
-//     } catch (error) {
-//         console.error('Authentication Error:', error.message);
-//         alert(error.message); // Display the error message from the backend
-//     }
-// };
-
 const token = window.localStorage.getItem('token');
 fetch(`${BASE_URL}/user/verifyToken`, {
     headers: {
-        // For appending token in the request header
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${token}`, // for appending token back into the request header
     },
-    // For sending token through the cookie
-    credentials: 'include',
-}).then((res) => {
+    credentials: 'include', // for sending token through the cookie
+    }).then((res) => {
     if (res.ok) {
         window.location.href = '/view/index.html';
     }
 });
 
+// const token = window.localStorage.getItem('token');
+// console.log(token) // debug
+// fetch(`${BASE_URL}/user/verifyToken`, {
+//     headers: {
+//         Authorization: `Bearer ${token}`,
+//     },
+//     credentials: 'include',
+// }).then((res) => {
+//     console.log('Response status:', res.status); // Log response status
+//     const contentType = res.headers.get('content-type');
+//     console.log('Content-Type:', contentType); // Debug: Check the content type
+    
+//     if (contentType && contentType.includes('application/json')) {
+//         return res.json();
+//     } else {
+//         throw new Error('Response is not JSON. It might be an error page.');
+//     }
+// }).then((data) => {
+//     if (data && data.username) {
+//         window.location.href = '/view/index.html';
+//     } else {
+//         console.error('Unexpected response data:', data);
+//     }
+// }).catch((err) => {
+//     console.error('Fetch error:', err);
+// });
 
 
 // Select needed DOM elements
@@ -70,7 +70,7 @@ const handleSubmit = async (e) => {
 
         const result = await response.json();
         window.localStorage.setItem('token', result.data);  // Store the token after login
-        window.location.href = '/view/index.html'; // Redirect to the home page
+        // window.location.href = '/view/index.html'; // Redirect to the home page
 
     } catch (error) {
         console.error('Login Error:', error.message);
