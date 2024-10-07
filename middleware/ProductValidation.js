@@ -78,15 +78,15 @@ const productRegistrationValidation = (req, res, next) => {
     }
 
     // validate img route
-    if(img) {
-        if (!validator.isURL(url, 
-            { protocols: ['http','https','ftp'], 
-                require_tld: true, require_protocol: true 
-            })) 
-        {
-            return res.status(400).json({ message: "Invalid url!" });
-        }          
-    }
+    // if(img) {
+    //     if (!validator.isURL(url, 
+    //         { protocols: ['http','https','ftp'], 
+    //             require_tld: true, require_protocol: true 
+    //         })) 
+    //     {
+    //         return res.status(400).json({ message: "Invalid url!" });
+    //     }          
+    // }
 
     next();
 }
@@ -166,15 +166,15 @@ const multiRegistrationValidation = (req, res, next) => {
         }
     
         // validate img route
-        if(img) {
-            if (!validator.isURL(url, 
-                { protocols: ['http','https','ftp'], 
-                    require_tld: true, require_protocol: true 
-                })) 
-            {
-                return res.status(400).json({ message: "Invalid url!" });
-            }          
-        }
+        // if(img) {
+        //     if (!validator.isURL(url, 
+        //         { protocols: ['http','https','ftp'], 
+        //             require_tld: true, require_protocol: true 
+        //         })) 
+        //     {
+        //         return res.status(400).json({ message: "Invalid url!" });
+        //     }          
+        // }
     }
 
     next();

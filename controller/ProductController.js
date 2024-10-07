@@ -1,7 +1,7 @@
 import {Product} from '../model/Product.js';
 import { Brand } from '../model/Brand.js';
 
-// add a brand
+// add a product
 const addProduct = async (req, res) => {
     const {name, brand, productType, description, stock, price, img} = req.body;
     try {
@@ -28,7 +28,7 @@ const addProduct = async (req, res) => {
     }
 };
 
-// add multiple brands
+// add multiple product
 const addProducts = async (req, res) => {
     try {
         let counter = 0;
@@ -61,4 +61,14 @@ const addProducts = async (req, res) => {
     }
 };
 
-export { addProduct, addProducts };
+// view all products
+const viewProducts = async (_req, res) => {
+    try {
+    const products = await Product.find();
+    res.status(200).json(res.paginatedResults);
+    } catch(e) {
+        return res.status(500).json({message: `ERROR: ${e}.`});
+    }
+};
+
+export { addProduct, addProducts, viewProducts };
