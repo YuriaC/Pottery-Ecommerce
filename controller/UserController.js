@@ -7,7 +7,7 @@ import generateToken from '../util/generateToken.js';
 // helper function for generating JWT token and couple jwt with a httpOnly cookie, returns cookie
 const jwtCookie = (res, id, username) => {
     const token = generateToken(id, username);
-    console.log(`JWT token, ${token}, generated. \n`);  // debug
+    // console.log(`JWT token, ${token}, generated. \n`);  // debug
     res.cookie('token', token, {
         httpOnly: true,
         maxAge: 3600000,
@@ -32,7 +32,7 @@ const register = async (req, res) => {
         // hash password + salt
         const salt = await getSalt();
         const saltedPassword = password + salt 
-        console.log(`salt is ${salt}, password is ${password}, saltedPswd is ${saltedPassword}`);  // debug
+        // console.log(`salt is ${salt}, password is ${password}, saltedPswd is ${saltedPassword}`);  // debug
         const hashedPwd = await argon2.hash(saltedPassword);
 
         // create user document
@@ -102,9 +102,9 @@ const logout = (_req, res) => {
 };
 
 const verifyToken = (req, res) => {
-    const { username } = req.body;
+    const { userName } = req.body;
     try {
-        return res.status(200).json({ username });
+        return res.status(200).json({ userName });
     } catch (error) {
         console.error(error);
         return res.status(500).json({ message: error.message });

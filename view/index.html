@@ -5,12 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="./images/potteryLogo.ico">
     <link rel="stylesheet" href="app/scss/style.css">
+    
+    <!---Font Import-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
     <title>YJ's Pottery</title>
 </head>
 <body>
-    <div>
-        <img id='test' src="/" alt="a image">
+    <nav class="playfair-display" id="navBar">
+        <div class="navbar-left">
+            <a class="userEle" href="/view/index.html">HomePage</a>
+        </div>
+        <div class="navbar-right">
+            <a class="userEle" href="./login.html">Login</a>
+            <a class="userEle" href="./signup.html">Register</a>
+            <a class="userEle" href="/login">Logout</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="filter">
+            <p>I am filter</p>
+        </div>
+
+        <article class="playfair-display">
+            <h1> Welcome to YJ's Pottery!</h1>
+            <h2>Finest ceramics and porcelain for your everyday needs!</h2>
+        </article>
+
+        <div class="fav">
+            <p>fav here</p>
+        </div>
+
     </div>
+
     <script src="./app/js/script.js"></script>
 </body>
 </html>

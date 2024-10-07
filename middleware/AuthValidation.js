@@ -10,13 +10,13 @@ const jwtValidation = (req, res, next) => {
     // decoding token
     try {
         const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-        req.body.userId = decodedToken;
-        req.body.username = decoded.username;
-    } catch (err) {
-        res.status(401).json({message: 'Invalid token!'});
-    }
+        req.userName = decodedToken;
+        next(); 
 
-    next();
-};
+    } catch (err) {
+        res.status(403).json({message: 'Invalid token!'});
+    } 
+
+}
 
 export default jwtValidation;
