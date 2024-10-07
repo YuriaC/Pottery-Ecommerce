@@ -25,7 +25,7 @@ router
     .post('/add', productRegistrationValidation, addProduct)
     .post('/addMany', multiRegistrationValidation, addProducts)
     .get('/', paginatedResults(Product), viewProducts)
-    .get('/:id', viewProducts)
+    .get('/:id', viewProduct)
     // .get('/all', async (req, res) => {
     //     try {
     //         const page = req.query.page ? parseInt(req.query.page) - 1 : 0;
