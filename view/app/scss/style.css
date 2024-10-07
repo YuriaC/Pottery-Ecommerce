@@ -123,4 +123,8 @@ article {
   object-fit: contain;
 }
 
+.product > a > img:hover{
+  width: 11rem;
+  height: 11rem;
+}
 

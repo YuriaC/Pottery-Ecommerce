@@ -47,9 +47,6 @@ function displayProducts(products) {
 }
 
 function displayPaginationButtons(data) {
-    const paginationContainer = document.getElementById('pagination-container');
-    paginationContainer.innerHTML = ''; // Clear previous buttons
-
     // Previous Page Button
     if (data.previous) {
         const prevButton = document.createElement('button');
@@ -57,7 +54,7 @@ function displayPaginationButtons(data) {
         prevButton.addEventListener('click', () => {
             fetchPaginatedData(data.previous.page, data.previous.limit);
         });
-        paginationContainer.appendChild(prevButton);
+        container.appendChild(prevButton);
     }
 
     // Next Page Button
@@ -67,7 +64,7 @@ function displayPaginationButtons(data) {
         nextButton.addEventListener('click', () => {
             fetchPaginatedData(data.next.page, data.next.limit);
         });
-        paginationContainer.appendChild(nextButton);
+        container.appendChild(nextButton);
     }
 }
 
