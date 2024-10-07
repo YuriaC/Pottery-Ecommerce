@@ -7,5 +7,4 @@ node_modules/
 # ignore these files adn directorys under the util directory
 util/generateJWT.js
 util/seedDB.js
-util/data/*
 
